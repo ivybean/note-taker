@@ -37,7 +37,7 @@ app.post("/api/notes", function(req, res) {
 
   notesId();
 
-  fs.writeFileSync(path.resolve(dbPath, "db.json"), JSON.stringify(notesDb), utf8);
+  fs.writeFileSync(path.resolve(dbPath, "db.json"), JSON.stringify(notesDb));
   res.json(notesDb);
 });
 
@@ -48,7 +48,7 @@ app.delete("/api/notes/:id", function(req, res) {
   notesId();
   
   notesDb.splice(deleteId, 1);
-  fs.writeFileSync(path.resolve(dbPath, "db.json"), JSON.stringify(notesDb), utf8);
+  fs.writeFileSync(path.resolve(dbPath, "db.json"), JSON.stringify(notesDb));
   res.json(notesDb);
 })
 
